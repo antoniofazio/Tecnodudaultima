@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TecnoDuda</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+<ul class="nav pull-right">
+          <% if user_signed_in? %>
+            <li id="fat-menu" class="dropdown">
+              <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">
+              <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+                <li role="presentation"><%= link_to 'Cambiar clave', edit_user_password_path %></li>                
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><%= link_to 'Cerrar sesion', destroy_user_session_path, :method => :delete %></li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to 'Ingresar', new_user_session_path %></li>
+          <% end %>
+        </ul>
+
+</body>
+</html>

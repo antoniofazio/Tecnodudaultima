@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  query: MyString
+  user__id: 1
+  subject_id: 1
+
+two:
+  query: MyString
+  user__id: 1
+  subject_id: 1

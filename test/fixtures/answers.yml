@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  positive_rate: 1
+  negative_rate: 1
+  teacher_approval: false
+  user__id: 1
+  question_id: 1
+
+two:
+  positive_rate: 1
+  negative_rate: 1
+  teacher_approval: false
+  user__id: 1
+  question_id: 1

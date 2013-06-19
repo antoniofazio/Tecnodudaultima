@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Positive rate:</b>
+  <%= @answer.positive_rate %>
+</p>
+
+<p>
+  <b>Negative rate:</b>
+  <%= @answer.negative_rate %>
+</p>
+
+<p>
+  <b>Teacher approval:</b>
+  <%= @answer.teacher_approval %>
+</p>
+
+<p>
+  <b>User :</b>
+  <%= @answer.user__id %>
+</p>
+
+<p>
+  <b>Question:</b>
+  <%= @answer.question_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_answer_path(@answer) %> |
+<%= link_to 'Back', answers_path %>
