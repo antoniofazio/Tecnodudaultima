@@ -39,19 +39,20 @@ class QuestionsController < ApplicationController
 
   # POST /questions
   # POST /questions.json
-  def create
-    @question = Question.new(params[:question])
-
-    respond_to do |format|
-      if @question.save
-        format.html { redirect_to @question, notice: 'Question was successfully created.' }
-        format.json { render json: @question, status: :created, location: @question }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @question.errors, status: :unprocessable_entity }
-      end
+  def create  
+     @user = User.new(params[:user])  
+      
+     respond_to do |format|  
+     if @user.save  
+     UserMailer.registration_confirmation(@user).deliver  
+      format.html { redirect_to(@user, :notice => 'User was successfully created.') }  
+       format.xml  { render :xml => @user, :status => :created, :location => @user }  
+       else  
+        format.html { render :action => "new" }  
+        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }  
+       end  
+      end  
     end
-  end
 
   # PUT /questions/1
   # PUT /questions/1.json

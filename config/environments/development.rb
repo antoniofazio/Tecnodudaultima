@@ -35,6 +35,15 @@ TecnoDuda::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  config.action_mailer.delivery_method = :smtp #letter_opener 
 
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  ActionMailer::Base.smtp_settings = { 
+  :address        => 'smtp.some.com',
+      :port           => 99,
+      :domain         => 'www.some.com',
+      :user_name            => "andyo8.flores",  
+      :password             => " diosesamor1",  
+      :authentication       => "plain", 
+      :openssl_verify_mode  => 'none'
+  }  
 end
